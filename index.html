@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Card</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+        <article data-testid="test-todo-card">
+            <h2 data-testid="test-todo-title">Good Life</h2>
+            <p data-testid="test-todo-description">Living good life, with a positive attitude and a lot of love, and navigating challenges with grace and resilience.</p>
+
+            <div class="badges">
+                <span class="status" data-testid="test-todo-status">Pending</span>
+                <strong data-testid="test-todo-priority">High</strong>
+            </div>
+            <div class="due-row">
+                <time datetime="2026-04-16T23:59:00Z">Due Apr 16, 2026</time>
+                <span data-testid="test-todo-time-remaining" aria-live="polite"></span>
+            </div>
+            <label class="label">
+                <input 
+                type="checkbox" 
+                data-testid="test-todo-completed"
+                id="checkbox">
+                 Mark as Completed
+            </label>
+            <ul data-testid="test-todo-tags">
+                    <li>Work</li>
+                    <li>Personal</li>
+                    <li>Urgent</li>
+            </ul>
+            <hr>
+            <div class="card-footer">
+                <button data-testid="test-todo-edit" onclick="Display()">Edit</button>
+                <button data-testid="test-todo-delete">Delete</button>
+            </div>
+            
+
+        </article>
+
+    </main>
+    
+</body>
+</html>
