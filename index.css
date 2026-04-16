@@ -45,7 +45,7 @@ p[data-testid="test-todo-description"]{
     color: #666;
     margin-bottom: 20px;
 }
- .badges {
+.badges {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
@@ -65,7 +65,7 @@ p[data-testid="test-todo-description"]{
     border: 1px solid #fde68a;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
- 
+
 [data-testid="test-todo-status"] {
     background: #eff6ff;
     color: #1e40af;
@@ -143,10 +143,108 @@ span[data-testid="test-todo-time-remaining"]{
     font-size: 1rem;
     font-weight: bold;
 }
-
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+.form{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 40%;
+    height: 96%;
+}
+input[data-testid="test-edit-title"]{
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea[data-testid="test-edit-description"]{
+    width: 100%;
+    height: 100px;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select[data-testid="test-edit-status"]{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select[data-testid="test-edit-priority"]{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[data-testid="test-edit-due-date"]{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[data-testid="test-edit-tags"]{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button[data-testid="test-edit-save"]{
+    background: #4caf50;
+    border: 1px solid #4caf50;
+    color: #fff;
+}
+button[data-testid="test-edit-save"]:hover { 
+    background: #45a049; 
+    transform: scale(1.1,1.1);
+}
+button[data-testid="test-edit-cancel"]{
+    background: #f44336;
+    border: 1px solid #f44336;
+    color: #fff;
+}
+button[data-testid="test-edit-cancel"]:hover { 
+    background: #e53935; 
+    transform: scale(1.1,1.1);
+}
 @media (max-width: 500px) {
     article {
         width: 90%;
         padding: 15px;
+    }
+    .form{
+        width: 90%;
+        height: 98%;
+        overflow: scroll;
     }
 }

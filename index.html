@@ -10,15 +10,20 @@
 <body>
     <main>
         <article data-testid="test-todo-card">
-            <h2 data-testid="test-todo-title">Good Life</h2>
-            <p data-testid="test-todo-description">Living good life, with a positive attitude and a lot of love, and navigating challenges with grace and resilience.</p>
+            <h2 class="h2"  data-testid="test-todo-title">Good Life</h2>
+            <p class="dp"  data-testid="test-todo-description">Living good life, with a positive attitude and a lot of love, and navigating challenges with grace and resilience.</p>
 
             <div class="badges">
-                <span class="status" data-testid="test-todo-status">Pending</span>
-                <strong data-testid="test-todo-priority">High</strong>
+                <select name="" id="statush"  data-testid="test-todo-status"> pending
+                    <option value="pending">Pending</option>
+                    <option value="in progress">in progress</option>
+                    <option value="done">Done</option>
+                </select>
+                
+                <strong class="statuscl" data-testid="test-todo-priority">High</strong>
             </div>
             <div class="due-row">
-                <time datetime="2026-04-16T23:59:00Z">Due Apr 16, 2026</time>
+                <time class="date" datetime="2026-04-16T23:59:00Z">Due Apr 16, 2026</time>
                 <span data-testid="test-todo-time-remaining" aria-live="polite"></span>
             </div>
             <label class="label">
@@ -26,21 +31,51 @@
                 type="checkbox" 
                 data-testid="test-todo-completed"
                 id="checkbox">
-                 Mark as Completed
+                Mark as Completed
             </label>
-            <ul data-testid="test-todo-tags">
-                    <li>Work</li>
+            <ul class="tags" data-testid="test-todo-tags">
+                    <li class="li">Work</li>
                     <li>Personal</li>
                     <li>Urgent</li>
             </ul>
             <hr>
             <div class="card-footer">
-                <button data-testid="test-todo-edit" onclick="Display()">Edit</button>
+                <button data-testid="test-todo-edit" onclick="EditForm()">Edit</button>
                 <button data-testid="test-todo-delete" onclick="Getdisplay()">Delete</button>
             </div>
             
 
         </article>
+        <div class="overlay" data-testid="test-todo-edit-overlay">
+            <form  class=" form " data-testid="test-todo-edit-form">
+                <h2>Edit Todo</h2>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" data-testid="test-edit-title">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" data-testid="test-edit-description"></textarea>
+                <label for="status">Status:</label>
+                <select id="status" name="status" data-testid="test-edit-status">
+                    <option value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" data-testid="test-edit-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label for="due-date">Due Date:</label>
+                <input type="datetime-local" id="due-date" name="due-date" data-testid="test-edit-due-date">
+                <label for="tags">Tags (comma separated):</label>
+                <input type="text" id="tags" name="tags" data-testid="test-edit-tags">
+                <div class="form-buttons">
+                    <button type="submit" data-testid="test-edit-save">Save</button>
+                    <button type="button" data-testid="test-edit-cancel" onclick="Canclemodal()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
 
     </main>
     
